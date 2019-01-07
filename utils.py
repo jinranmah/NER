@@ -56,9 +56,10 @@ def build_word_index():
             dict_word = {}
             # with open('source_vocab', 'w') as s_vocab:
             for line in source.readlines():
-                line = line.strip()
+                 #删除函数，只能删除开头或是结尾的字符或是字符串。不能删除中间的字符或是字符串。参数为空时默认删除空白符('\n','\r','\t' ,'')
+                line = line.strip() 
                 if line != '':
-                    word_arr = line.split()
+                    word_arr = line.split() #分割函数，将字符串分割为“字符”，默认不带参数为空格分割。
                     for w in word_arr:
                         dict_word[w] = dict_word.get(w, 0) + 1
 
